@@ -61,16 +61,3 @@ if __name__ == '__main__':
     cars = [BMW("cfg_bmw.yaml"), BMW("cfg_bmw.json"), Mercedes("cfg_mercedes.yaml"), Mercedes("cfg_mercedes.json")]
     for i in range(len(cars)):
         cars[i].drive()
-
-
-# No type hints
-# No docstrings
-# range(len()) instead of iterating directly over the list
-# Duplicated code / No base class
-# No context manager for file and close() is missing
-# Debug outputs instead of logging
-# Reading from files in __init__. Better via classmethod or factory design pattern/Decouple config reading from Cars
-# Public extract_parameters methods / Extract method could also be static
-# Manufacturer string in drive can be replaced with 'self.__class__.__name__'
-# Use Pathlib for handling file paths and .stem to get the file extension. Also, the code takes always the last 4
-#   characters. If you want to support .txt files, you need to change the logic slightly.
